@@ -26,22 +26,30 @@ Your app should have the following URLs. You'll need to define view functions to
 
 | path                      | verb | purpose                                               |
 | ------------------------- | ---- | ----------------------------------------------------- | 
-| `""`                      | GET  | show a list of all the albums                         |
-| `/albums/new`             | GET  | show a form to create a new album                     |
-| `/albums/new`             | POST | create a new album                                    |
-| `/albums/<int:pk>`        | GET  | show details about a single album                     |
-| `/albums/<int:pk>/edit`   | GET  | show a form to edit a new album                       |
-| `/albums/<int:pk>/edit`   | POST | update a specific album                               |
-| `/albums/<int:pk>/delete` | GET  | show a confirmation screen to delete a specific album |
-| `/albums/<int:pk>/delete` | POST | delete a specific album                               |
+| `""`                      | GET  | show a list of all the albums                         | (ALL ALBUMS)
+
+| `/albums/new`             | GET  | show a form to create a new album                     | (NEW ALBUM FORM)
+| `/albums/new`             | POST | create a new album                                    | (CREATE ALBUM)
+
+| `/albums/<int:pk>`        | GET  | show details about a single album                     | (ALBUM DETAIL)
+
+| `/albums/<int:pk>/edit`   | GET  | show a form to edit a new album                       | (EDIT ALBUM FORM)
+| `/albums/<int:pk>/edit`   | POST | update a specific album                               | (UPDATE ALBUM)
+
+| `/albums/<int:pk>/delete` | GET  | show a confirmation screen to delete a specific album | (CONFIRM DELETE ALBUM)
+| `/albums/<int:pk>/delete` | POST | delete a specific album                               | (DELETE ALBUM)
+
 
 ❓ Why are we using `POST` instead of `DELETE` or `PUT/PATCH` verbs for the delete and edit actions? It's because we are using web forms to send the data. [Web forms can only send `GET` or `POST` requests](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method). We have more options with AJAX, but we haven't learned about how to use that with Django yet.
 
 ## 🌶️ Spicy options
 
 - Add an Artist model and create a foreign key on the Album model to associate the two.
-  - Show the Artist and their other albums on the album detail page, with links to those album detail pages.
+
+- Show the Artist and their other albums on the album detail page, with links to those album detail pages.
+
 - Create an way to mark an album as a favorite. Favorited albums are displayed with a star next to them (how you choose to show this is up to you). A user should be able to click on the star, or a link or button, to mark the album as a favorite.
+
 - Show a list of all the albums by a particular artist if a user clicks on an artist's name.
 
 ## Getting up and running
@@ -80,7 +88,7 @@ To generate an app in your django_music project (so that you have something anal
 If you want to name your app "albums", then you would run:
 
 ```sh
-django-admin startapp albums
+django-admin startapp albums (junietunes)
 ```
 
 and your directory structure would look like:
