@@ -38,7 +38,8 @@ def edit_album(request, pk):
 
 def album_detail(request, pk):
     album = get_object_or_404(Album, pk=pk)
-    return render(request, "junietunes/album_detail.html", {"album": album})
+    notes = Note.objects.filter()
+    return render(request, "junietunes/album_detail.html", {"album": album, "notes": notes})
 
 def delete_album(request, pk):
     album = get_object_or_404(Album, pk=pk)
