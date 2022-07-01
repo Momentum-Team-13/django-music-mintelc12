@@ -5,7 +5,7 @@
 <p><a href="{% url 'list_albums' %}">View All Albums</a></p>
 
 <div>
-  <form action="{% url 'edit_album' pk=album.pk %}" method="POST">
+  <form action="{% url 'edit_album' pk=album.pk %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <div>

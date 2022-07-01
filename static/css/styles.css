@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(0deg, rgba(30, 74, 92, 0.381), rgba(255, 255, 255, 0.3)), url(ezgif.com-gif-maker.jpg);
+    background-image: linear-gradient(0deg, rgba(0, 52, 72, 0.38), rgba(255, 255, 255, 0.3)), url(ezgif.com-gif-maker.jpg);
     background-size: 1600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -40,6 +40,7 @@ h1 {
     font-size: 55px;
     padding: 10px;
     background: url(bokeh-effect.jpeg);
+    background-attachment: fixed;
 
 }
 
