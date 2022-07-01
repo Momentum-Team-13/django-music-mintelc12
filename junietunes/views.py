@@ -1,5 +1,6 @@
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView, CreateView
 
 from django.shortcuts import render
 from .models import Album, Note
@@ -37,8 +38,7 @@ def edit_album(request, pk):
 
 def album_detail(request, pk):
     album = get_object_or_404(Album, pk=pk)
-    notes = Note.objects.filter(album = pk)
-    return render(request, "junietunes/album_detail.html", {"album": album, "notes": notes})
+    return render(request, "junietunes/album_detail.html", {"album": album})
 
 def delete_album(request, pk):
     album = get_object_or_404(Album, pk=pk)
@@ -58,5 +58,6 @@ def add_note(request, pk):
             new_note = form.save()
             new_note.album = album
             new_note.save()
-            return redirect(to="view_album", pk=pk)
-    return render(request, "notes/note_form.html", {"album": album, "form": form})
+            return redirect(to="album_detail", pk=pk)
+    return render(request, "junietunes/note_form.html", {"album": album, "form": form})
+

@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path
 from junietunes import views as junietunes_views
-
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,8 @@ urlpatterns = [
     path("junietunes/new/", junietunes_views.add_album, name="add_album"),
     path("junietunes/<int:pk>", junietunes_views.album_detail, name="album_detail"),
     path("junietunes/<int:pk>/edit", junietunes_views.edit_album, name="edit_album"),
-    path("junietunes/<int:pk>/delete", junietunes_views.delete_album, name="delete_album")
+    path("junietunes/<int:pk>/delete", junietunes_views.delete_album, name="delete_album"),
+    path('contacts/<int:pk>/notes/', junietunes_views.add_note, name='view_note'),
 ]
+if settings.DEBUG: 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

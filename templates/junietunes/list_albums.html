@@ -1,47 +1,46 @@
 {% extends "base.html" %}
 
 {% block content %}
+<body>
 <h1>All Albums</h1>
 
 <p><a href="{% url 'add_album' %}">Add Album</a></p>
 
-<div class="flex flex-wrap">
-    {% for album in albums %}
-        <div class="w-33 pa3">
-            <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h2>
 
-    {% if album.artist %}
-        <div class="flex">
-            <div class="pr2"></div>
-            <div>{{ album.artist }}</div>
+
+{% for album in albums %}
+
+    <div class="record">
+
+        {% if album.cover %}
+            <img src="{{ album.cover.url }}" alt="{{ album.cover }}">
+        {% endif %}
+
+                <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}, {{album.year}}</a></h2>
+        <div class="artist">
+            {% if album.artist %}
+                    <h3>{{ album.artist }}</h3>
+                    <h5><time class="date">added on {{ album.created_at}}</time></h5>
+            {% endif %}
         </div>
-    {% endif %}
 
-    {% if album.year %}
-        <div class="flex">
-            <div class="pr2"></div>
-            <div>{{ album.year }}</div>
+        <div class="note">
+            {% for note in album.album_note.all %}
+                        <div>{{ note }}</div>
+            {% endfor %}
         </div>
-    {% endif %}
-
-    {% if notes %}
-        <div class="flex">
-            {% for note in notes %}
-            <div class="pr2">
-                <div>{{ note.note }}</div>
-            </div>
-        </div>
-    {% endfor %}
-    {% endif %}
 
 
-    <p>
-        <a href="{% url 'album_detail' pk=album.pk %}">Add Album</a><br>
-        <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
-        <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
-        
-    </p>
+        <p>
+            <a href="{% url 'view_note' pk=album.pk %}">Add Note</a>
+            <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
+            <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
+            
+        </p>
     </div>
-    {% endfor %}
-</div>  
+</div>
+{% endfor %}
+
 {% endblock %}
+</body>
+

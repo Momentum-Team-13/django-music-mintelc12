@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Note</h1>
+
+<p><a href="{% url 'add_album' %}" method="POST">Add Album</a></p>
+<p><a href="{% url 'list_albums' %}">View All Albums</a></p>
+
+<div class="flex flex-wrap">
+  
+  <div class="w-33 pa3">
+    <h2>{{ album.title }}</h2>
+
+    {% if album.album_note %}
+    <div class="flex">
+        <div class="pr2">
+            <div>{{ note }}</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div>
+        <form action="{% url 'view_note' pk=album.pk %}"  method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div>
+            <button type="submit">Save Note</button>
+          </div>
+        </form>
+      </div>
+
+    <p>
+      <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
+      <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
+    </p>
+  </div>
+</div>  
+{% endblock %}

@@ -6,6 +6,7 @@ class AlbumForm(forms.ModelForm):
         model = Album
         fields = [
             "title",
+            "cover",
             "artist",
             "year",
             # "created_at",
