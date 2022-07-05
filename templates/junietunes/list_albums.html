@@ -2,6 +2,7 @@
 
 {% block content %}
 <body>
+
 <h1>🎧 JunieTunes 🎧</h1>
 
 <h2>My Collection of Vinyl Records</h2>
@@ -9,44 +10,43 @@
 <p><a href="{% url 'add_album' %}">Add Album</a></p>
 
 
-
-{% for album in albums %}
 <div class="flex-container">
-    <div class="record">
-        
-        {% if album.cover %}
-            <img src="{{ album.cover.url }}" alt="{{ album.cover }}">
-        {% endif %}
-
-    <div class = album-year>
-        <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}, {{album.year}}</a></h2>
-    </div>
-
-        <div class="artist">
-            {% if album.artist %}
-                    <h3>{{ album.artist }}</h3>
-                    <h5><time class="date">added on {{ album.created_at}}</time></h5>
+{% for album in albums %}
+    <div class="column">
+        <div class="record">
+            
+            {% if album.cover %}
+                <img src="{{ album.cover.url }}" alt="{{ album.cover }}">
             {% endif %}
-        </div>
-    
 
-        <div class="note">
-            {% for note in album.album_note.all %}
-                        <div>{{ note }}</div>
-            {% endfor %}
+        <div class = album-year>
+            <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}, {{album.year}}</a></h2>
         </div>
 
-        <p>
-        <div class="options">
-            <a href="{% url 'view_note' pk=album.pk %}">Add Note</a>
-            <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
-            <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
+            <div class="artist">
+                {% if album.artist %}
+                        <h3>{{ album.artist }}</h3>
+                        <h5><time class="date">added on {{ album.created_at}}</time></h5>
+                {% endif %}
+            </div>
+
+            <div class="note">
+                {% for note in album.album_note.all %}
+                            <div>{{ note }}</div>
+                {% endfor %}
+            </div>
+
+            <p>
+            <div class="options">
+                <a href="{% url 'view_note' pk=album.pk %}">Add Note</a>
+                <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
+                <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
+            </div>
+            </p>
         </div>
-        </p>
-    
     </div>
-</div>
 {% endfor %}
+</div>
 
 {% endblock %}
 </body>

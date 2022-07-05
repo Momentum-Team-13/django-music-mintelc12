@@ -1,7 +1,6 @@
 from webbrowser import get
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, CreateView
-
 from django.shortcuts import render
 from .models import Album, Note
 from .forms import AlbumForm, NoteForm
@@ -62,3 +61,4 @@ def add_note(request, pk):
             return redirect(to="album_detail", pk=pk)
     return render(request, "junietunes/note_form.html", {"album": album, "form": form})
 
+    

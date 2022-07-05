@@ -26,7 +26,7 @@ urlpatterns = [
     path("junietunes/<int:pk>", junietunes_views.album_detail, name="album_detail"),
     path("junietunes/<int:pk>/edit", junietunes_views.edit_album, name="edit_album"),
     path("junietunes/<int:pk>/delete", junietunes_views.delete_album, name="delete_album"),
-    path('contacts/<int:pk>/notes/', junietunes_views.add_note, name='view_note'),
+    path('junietunes/<int:pk>/notes/', junietunes_views.add_note, name='view_note'),
 ]
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
