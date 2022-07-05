@@ -8,6 +8,7 @@ class Album(models.Model):
     artist = models.CharField(max_length=255)
     year = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    favorite = models.BooleanField(default=False)
 
 class Note(models.Model):
     album_note = models.TextField(blank=True, null=True)

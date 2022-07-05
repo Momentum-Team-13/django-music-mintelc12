@@ -9,7 +9,7 @@ class AlbumForm(forms.ModelForm):
             "cover",
             "artist",
             "year",
-            # "created_at",
+            "favorite"
         ]
 
 class NoteForm(forms.ModelForm):

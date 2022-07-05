@@ -5,6 +5,20 @@ body {
     background-attachment: fixed;
 }
 
+.gold-star {
+    color: gold;
+    font-size: 20px;
+    background-color: black;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.empty-star {
+    font-size: 30px;
+    padding: 6px;
+    border-radius: 50%;
+}
+
 a:link {
     color: black;
 }
@@ -27,8 +41,8 @@ p {
 .album-year {
     background-color: white;
     opacity: .8;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 10px;
 }
 
@@ -116,15 +130,15 @@ img {
 }
 
 .note {
-    background-color:rgb(203, 84, 84);
-    padding: 5px;
-    /* margin: 5px; */
+    background-color:black;
+    padding: 3px;
     border-radius: 10px;
-    color:rgb(203, 230, 252)
+    color:rgb(203, 230, 252);
+    font-family: arial;
 }
 
 .options {
     background-color:rgb(225, 239, 251);
-    padding: 10px;
+    padding: 2px;
     border-radius: 10px;
 }
