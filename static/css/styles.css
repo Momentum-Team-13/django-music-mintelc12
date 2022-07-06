@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(0deg, rgba(0, 52, 72, 0.25), rgba(255, 255, 255, 0.25)), url(brick-wall-backgroung.jpg);
+    background-image: linear-gradient(0deg, rgba(0, 52, 72, 0.25), rgba(255, 255, 255, 0.25)), url(cool-background.jpg);
     background-size: 1600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,12 +11,15 @@ body {
     background-color: black;
     padding: 6px;
     border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .empty-star {
     font-size: 30px;
     padding: 6px;
+    color: rgb(0, 0, 0);
     border-radius: 50%;
+    
 }
 
 a:link {
@@ -26,7 +29,7 @@ a:visited {
     color: black;
 }
 a:hover {
-    color:rgb(136, 168, 195);
+    color: rgb(6, 184, 190);
     transition: .25s;
 }
 
@@ -41,24 +44,26 @@ p {
 .album-year {
     background-color: white;
     opacity: .8;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(149, 57, 57);
     font-size: 55px;
     padding: 30px;
-    background: url(retro-background.jpg);
+    background: url(blur.jpg);
     border-radius: 10px;
     opacity: .9;
     background-repeat: no-repeat;
     background-size: 1600px;
     background-attachment: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 
 }
 
@@ -82,26 +87,28 @@ h5 {
 }
 
 .record {
-    border: solid yellow 2px;
-    box-shadow: 10px 10px;
+    /* border: solid rgb(246, 152, 37) 5px; */
+    /* box-shadow: 15px 10px 5px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
     border-radius: 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     /* margin: 10px; */
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(203, 84, 84);
+    color: rgb(33, 80, 89);
     background: url(wall-of-records.jpeg);
     background-size: 1000px;
-    max-width: 450px;
+    width: 450px;
     margin: auto;
     height: 800px;
 
 }
 
 .flex-container {
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -109,11 +116,12 @@ h5 {
 
 .column {
     flex: 33.33%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .artist {
-    background-image: linear-gradient(to bottom right, white, gold);
+    background-image: linear-gradient(to bottom right, rgb(255, 237, 198), rgb(231, 160, 131));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     text-align: center;
     padding: 10px;
@@ -126,19 +134,21 @@ img {
     border: 5px solid black;
     width: 300px;
     margin: 10px;
-    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .note {
     background-color:black;
-    padding: 3px;
+    padding: 4px;
     border-radius: 10px;
     color:rgb(203, 230, 252);
     font-family: arial;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .options {
     background-color:rgb(225, 239, 251);
-    padding: 2px;
+    padding: 4px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
