@@ -14,29 +14,29 @@
 {% for album in albums %}
     <div class="column">
         <div class="record">
-            
-            {% if album.cover %}
-                <img src="{{ album.cover.url }}" alt="{{ album.cover }}">
-            {% endif %}
+            <div class="favorited">
+                {% if album.cover %}
+                    <img src="{{ album.cover.url }}" alt="{{ album.cover }}">
+                {% endif %}
 
-            {% if album.favorite == True %}
-            <span class="icon">
-                <a href="{% url "edit_album" pk=album.pk %}">
-                    <span class="gold-star">
-                        <i class="fa-solid fa-star"></i>
+                {% if album.favorite == True %}
+                <span class="icon">
+                    <a href="{% url "edit_album" pk=album.pk %}">
+                        <span class="gold-star">
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </a> 
+                </span>   
+                {% else %}
+                    <span class="icon">
+                        <a href="{%url "edit_album" pk=album.pk %}">
+                            <span class="empty-star">    
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </a>
                     </span>
-                </a> 
-            </span>   
-        {% else %}
-            <span class="icon">
-                <a href="{%url "edit_album" pk=album.pk %}">
-                    <span class="empty-star">    
-                        <i class="fa-regular fa-star"></i>
-                    </span>
-                </a>
-            </span>
-        {% endif %} <br>    
-
+                {% endif %} <br>    
+            </div>
         <div class = album-year>
             <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}, {{album.year}}</a></h2>
         </div>
